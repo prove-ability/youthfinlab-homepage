@@ -4,8 +4,8 @@ import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Youthfinal",
-  description: "Youthfinal",
+  title: "Youthfinal | 유스핀랩",
+  description: "유스핀랩",
 };
 
 export default function RootLayout({
