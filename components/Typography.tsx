@@ -1,8 +1,8 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
 interface Props {
   className?: string;
-  children: string;
+  children: ReactNode;
 }
 
 const H1: FC<Props> = ({ className, children }) => {
