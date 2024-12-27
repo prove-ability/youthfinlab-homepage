@@ -1,101 +1,185 @@
+import Typography from "@/components/Typography";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main>
+      {/* 미션 */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 text-center">
+          <Typography.H1 className="text-[#A5A6F6] mb-8">
+            Our mission
+          </Typography.H1>
+          <div className="space-y-4">
+            <Typography.H4>
+              유스핀랩은 자녀의 미래에
+              <br />
+              부가 따를 수 있게 한다는 미션을 수행합니다.
+            </Typography.H4>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* 레모네이드 스탠드 */}
+      <section className="py-24 bg-[#F9F7F4]">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <Typography.H2 className="mb-4">
+                미국 가정 경제 교육의 시작,
+                <br />
+                유스핀랩 스토리
+              </Typography.H2>
+              <Typography.P className="text-gray-600">
+                미국에는 아이들이 직접 경제활동을 체험하며 돈과 윤리를 배우고,
+                자신스럽게 돈과 경제개념을 익히는 가장 교육 문화가 있습니다.
+              </Typography.P>
+            </div>
+            <div className="space-y-4">
+              <Image
+                src="https://placehold.co/800x500/F4F4F4/666666.png?text=YouthFinLab+Kids"
+                alt="유스핀랩 교육을 받는 아이들"
+                width={800}
+                height={500}
+                className="rounded-lg w-full"
+              />
+              <Image
+                src="https://placehold.co/800x500/F4F4F4/666666.png?text=YouthFinLab+Story"
+                alt="유스핀랩 교육 현장"
+                width={800}
+                height={500}
+                className="rounded-lg w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 우리나라는 어떤가요? */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <Image
+                src="https://placehold.co/800x800/F4F4F4/666666.png?text=Parent+and+Child"
+                alt="부모와 자녀가 대화하는 모습"
+                width={800}
+                height={800}
+                className="rounded-lg w-full"
+              />
+            </div>
+            <div>
+              <Typography.H2 className="mb-6">
+                우리나라는 어떤가요?
+              </Typography.H2>
+              <div className="space-y-4">
+                <Typography.P className="text-gray-600">
+                  학교에서는 가치중심적, 실질적인 금융경제 교육을 전달지
+                  어려웠습니다. 그렇게 배우고 자라 부모가 되고 나니, 아이에게
+                  어떻게 가르쳐야할지 막막합니다.
+                </Typography.P>
+                <Typography.Blockquote>
+                  "우리 집은 부자이기고 돈은 어디에서 왜 버는거야?" "네
+                  아이만큼은 돈 걱정 없이 살면 좋겠어요."
+                </Typography.Blockquote>
+                <Typography.P className="text-gray-600">
+                  좋은 교육을 시작으로, 자녀의 경제적 목표를 발견하고 경제적
+                  자유를 누리는 가정이 될 수 있도록, 유스핀랩이 가족 금융
+                  라이프스타일을 이끌어 나가겠습니다.
+                </Typography.P>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 언론보도 */}
+      <section className="py-24 bg-[#A5A6F6]">
+        <div className="container mx-auto px-4">
+          <Typography.H2 className="text-center text-white mb-12">
+            언론보도
+          </Typography.H2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "[인터뷰] 아이들 경제교육 전도사 이민혁 대표를...",
+                date: "2024.01.23",
+                image:
+                  "https://placehold.co/400x250/F4F4F4/666666.png?text=News+1",
+              },
+              {
+                title: "에듀테크, 프라이빗츠 A 투자 유치...누적 투자금 ...",
+                date: "2024.01.20",
+                image:
+                  "https://placehold.co/400x250/F4F4F4/666666.png?text=News+2",
+              },
+              {
+                title: "[웹툰형 만화] 아인의 머니트리 대한 '머니, 향은...",
+                date: "2024.01.15",
+                image:
+                  "https://placehold.co/400x250/F4F4F4/666666.png?text=News+3",
+              },
+              {
+                title: "신한투자증권, 원숭이도 '돈한' 돈에 이런이 교육...",
+                date: "2024.01.12",
+                image:
+                  "https://placehold.co/400x250/F4F4F4/666666.png?text=News+4",
+              },
+              {
+                title: "경찰교육 여론조사, 다음 효과적인 학습 경험 제...",
+                date: "2024.01.10",
+                image:
+                  "https://placehold.co/400x250/F4F4F4/666666.png?text=News+5",
+              },
+              {
+                title: "7인 초등학생 돈줄기가 '재린', 아이들 선택받은 ...",
+                date: "2024.01.05",
+                image:
+                  "https://placehold.co/400x250/F4F4F4/666666.png?text=News+6",
+              },
+            ].map((news, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-lg overflow-hidden shadow-lg"
+              >
+                <Image
+                  src={news.image}
+                  alt={news.title}
+                  width={400}
+                  height={250}
+                  className="w-full"
+                />
+                <div className="p-6">
+                  <p className="text-gray-500 text-sm mb-2">{news.date}</p>
+                  <Typography.P className="font-medium line-clamp-2">
+                    {news.title}
+                  </Typography.P>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <button className="bg-black text-white px-6 py-2 rounded-full">
+              더보기
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* 투자 및 제휴 문의 */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 text-center">
+          <Typography.H2 className="mb-12">투자 및 제휴 문의</Typography.H2>
+          <div className="inline-block bg-[#A5A6F6] rounded-2xl p-8 text-white">
+            <div className="space-y-4">
+              <p className="text-lg">Email</p>
+              <p className="text-2xl font-bold">hello@youthfinlab.com</p>
+              <p className="text-lg mt-4">전화번호</p>
+              <p className="text-2xl font-bold">123-1234-1234</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
