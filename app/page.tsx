@@ -79,8 +79,8 @@ export default function Home() {
                   어떻게 가르쳐야할지 막막합니다.
                 </Typography.P>
                 <Typography.Blockquote>
-                  "우리 집은 부자이기고 돈은 어디에서 왜 버는거야?" "네
-                  아이만큼은 돈 걱정 없이 살면 좋겠어요."
+                  &quot;우리 집은 부자이기고 돈은 어디에서 왜 버는거야?&quot;
+                  &quot;네 아이만큼은 돈 걱정 없이 살면 좋겠어요.&quot;
                 </Typography.Blockquote>
                 <Typography.P className="text-gray-600">
                   좋은 교육을 시작으로, 자녀의 경제적 목표를 발견하고 경제적
