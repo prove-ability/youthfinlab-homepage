@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Youthfinal | 유스핀랩",
-  description: "유스핀랩",
+  title: "유스핀랩",
+  description:
+    "금융 지식이 만드는 큰 변화, 금융교육 전문기업 유스핀랩과 함께하세요",
 };
 
 export default function RootLayout({
@@ -16,9 +18,16 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
