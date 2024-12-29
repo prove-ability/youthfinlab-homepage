@@ -4,7 +4,7 @@ import OptimizedImage from "@/components/ui/OptimizedImage";
 import Typography from "@/components/ui/Typography";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ReactNode } from "react";
+import { ReactNode, FC } from "react";
 
 interface SectionProps {
   children: ReactNode;
@@ -18,12 +18,12 @@ interface SectionProps {
     | "gradient-primary-reverse";
 }
 
-const Section = ({
+const Section: FC<SectionProps> = ({
   children,
   className,
   containerClassName,
   background = "default",
-}: SectionProps) => {
+}) => {
   const backgroundStyles = {
     default: "bg-background",
     accent: "bg-accent",
@@ -84,7 +84,7 @@ export default function Home() {
 
       <Section background="default">
         <div className="flex flex-col md:flex-row items-center gap-8">
-          <div className="flex-1 space-y-4">
+          <div className="flex-1 space-y-4 w-full">
             <Typography.H2 className="text-2xl font-bold border-none text-foreground">
               건강한 금융경제
               <br />
@@ -98,12 +98,10 @@ export default function Home() {
               유스핀랩에서 건강한 금융생활을 위해 시작해 보세요
             </Typography.P>
           </div>
-          <div className="flex-1">
+          <div className="flex-1 w-full">
             <OptimizedImage
               src="https://placehold.co/800x500/F4F4F4/666666.png?text=Money+Management"
               alt="돈 관리 이미지"
-              // width={800}
-              // height={500}
               className="rounded-2xl w-full"
               priority={true}
             />
@@ -127,12 +125,10 @@ export default function Home() {
               최적의 프로그램을 설계합니다.
             </Typography.P>
           </div>
-          <div className="flex-1">
+          <div className="flex-1 w-full">
             <OptimizedImage
               src="https://placehold.co/800x500/F4F4F4/666666.png?text=Daily+Tips"
               alt="일상 팁 이미지"
-              // width={800}
-              // height={500}
               className="rounded-2xl w-full"
             />
           </div>
@@ -155,12 +151,10 @@ export default function Home() {
               맞춤형 금융지원 교육을 시행합니다.
             </Typography.P>
           </div>
-          <div className="flex-1">
+          <div className="flex-1 w-full">
             <OptimizedImage
               src="https://placehold.co/800x500/F4F4F4/666666.png?text=Shopping+Tips"
               alt="쇼핑 팁 이미지"
-              // width={800}
-              // height={500}
               className="rounded-2xl w-full"
             />
           </div>
