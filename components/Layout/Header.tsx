@@ -1,13 +1,16 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
+import Link from "next/link";
+import { useTheme } from "next-themes";
+import { Moon, Sun } from "lucide-react";
 
 const Header = () => {
-  //   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   const handleClick = () => setIsOpen(!isOpen);
+  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -23,31 +26,54 @@ const Header = () => {
           <Link href="/about">About</Link>
           <Link href="/blog">Blog</Link>
           <Link href="/contact">Contact</Link>
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-md hover:bg-accent hover:text-accent-foreground relative"
+            aria-label="Toggle theme"
+          >
+            <div className="relative w-4 h-4">
+              <Sun className="absolute inset-0 h-4 w-4 transition-transform scale-100 rotate-0 dark:scale-0 dark:-rotate-90" />
+              <Moon className="absolute inset-0 h-4 w-4 transition-transform scale-0 rotate-90 dark:scale-100 dark:rotate-0" />
+            </div>
+          </button>
         </nav>
-        {/* 햄버거 메뉴 버튼 */}
-        <button
-          onClick={handleClick}
-          className="md:hidden flex flex-col justify-center items-center"
-        >
-          <span
-            className={`bg-black block transition-all duration-300 ease-out 
+
+        {/* 모바일 메뉴 버튼 */}
+        <div className="flex items-center md:hidden">
+          <button
+            onClick={toggleTheme}
+            className="mr-4 p-2 rounded-md hover:bg-accent hover:text-accent-foreground relative"
+            aria-label="Toggle theme"
+          >
+            <div className="relative w-4 h-4">
+              <Sun className="absolute inset-0 h-4 w-4 transition-transform scale-100 rotate-0 dark:scale-0 dark:-rotate-90" />
+              <Moon className="absolute inset-0 h-4 w-4 transition-transform scale-0 rotate-90 dark:scale-100 dark:rotate-0" />
+            </div>
+          </button>
+          <button
+            onClick={handleClick}
+            className="flex flex-col justify-center items-center"
+          >
+            <span
+              className={`bg-black dark:bg-white block transition-all duration-300 ease-out 
                     h-0.5 w-6 rounded-sm ${
                       isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"
                     }`}
-          ></span>
-          <span
-            className={`bg-black block transition-all duration-300 ease-out 
+            ></span>
+            <span
+              className={`bg-black dark:bg-white block transition-all duration-300 ease-out 
                     h-0.5 w-6 rounded-sm my-0.5 ${
                       isOpen ? "opacity-0" : "opacity-100"
                     }`}
-          ></span>
-          <span
-            className={`bg-black block transition-all duration-300 ease-out 
+            ></span>
+            <span
+              className={`bg-black dark:bg-white block transition-all duration-300 ease-out 
                     h-0.5 w-6 rounded-sm ${
                       isOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"
                     }`}
-          ></span>
-        </button>
+            ></span>
+          </button>
+        </div>
       </div>
 
       {/* 모바일 메뉴 */}
