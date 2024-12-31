@@ -77,7 +77,7 @@ export default function Home() {
             금융교육 전문기업 유스핀랩과 함께하세요
           </Typography.H4>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-8">
           <Button variant="default">자세히 보기</Button>
         </div>
       </Section>
