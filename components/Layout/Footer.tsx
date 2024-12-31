@@ -9,7 +9,7 @@ const Footer: FC = () => {
           {/* 회사 정보 */}
           <div>
             <Link href="/" className="inline-block mb-4">
-              <span className="font-bold text-xl">Youthfinal</span>
+              <span className="font-bold text-xl">유스핀랩</span>
             </Link>
             <div className="space-y-1.5 text-sm text-gray-300">
               <p>사업자번호 281-22-02031 · 대표 고진주</p>
@@ -19,30 +19,32 @@ const Footer: FC = () => {
           </div>
 
           {/* 메뉴 링크 */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col md:flex-row gap-3">
             <Link
-              href="/posts"
+              href="https://blog.naver.com/youthfinlab"
+              target="_blank"
               className="text-gray-300 hover:text-white transition-colors"
             >
               블로그
             </Link>
             <Link
-              href="/faq"
+              href="/customer-support"
               className="text-gray-300 hover:text-white transition-colors"
             >
               고객지원
             </Link>
             <Link
-              href="/contact"
+              href="/education-inquiry"
               className="text-gray-300 hover:text-white transition-colors"
             >
               교육문의
             </Link>
             <Link
+              // FIXME: notion 링크 적용 예정
               href="/recruit"
               className="text-gray-300 hover:text-white transition-colors"
             >
-              채용문의
+              강사채용
             </Link>
           </div>
         </div>

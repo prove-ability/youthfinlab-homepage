@@ -2,60 +2,9 @@
 
 import OptimizedImage from "@/components/ui/OptimizedImage";
 import Typography from "@/components/ui/Typography";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { ReactNode, FC } from "react";
-
-interface SectionProps {
-  children: ReactNode;
-  className?: string;
-  containerClassName?: string;
-  background?:
-    | "default"
-    | "accent"
-    | "muted"
-    | "gradient-primary"
-    | "gradient-primary-reverse";
-}
-
-const Section: FC<SectionProps> = ({
-  children,
-  className,
-  containerClassName,
-  background = "default",
-}) => {
-  const backgroundStyles = {
-    default: "bg-background",
-    accent: "bg-accent",
-    muted: "bg-muted",
-    "gradient-primary": "bg-gradient-to-b from-primary/5 to-transparent",
-    "gradient-primary-reverse":
-      "bg-gradient-to-b from-transparent to-primary/5",
-  };
-
-  return (
-    <section className={cn("py-16", backgroundStyles[background], className)}>
-      <div className={cn("container mx-auto px-4", containerClassName)}>
-        {children}
-      </div>
-    </section>
-  );
-};
-
-const LECTURE_LOCATION = [
-  "서울시 중구청",
-  "YWCA",
-  "국민대학교",
-  "청소년금융교육협의회",
-  "부경대학교",
-  "BNK부산은행",
-  "하나증권",
-  "안국약품",
-  "KEB하나은행",
-  "IBK행복나눔재단",
-  "화성시문화재단",
-  "서민금융진흥원",
-] as const;
+import Button from "@/components/ui/Button";
+import Section from "@/components/ui/Section";
+import { LECTURE_LOCATION } from "@/app/constants/partners";
 
 export default function Home() {
   return (
@@ -77,7 +26,7 @@ export default function Home() {
             금융교육 전문기업 유스핀랩과 함께하세요
           </Typography.H4>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-8">
           <Button variant="default">자세히 보기</Button>
         </div>
       </Section>
@@ -164,17 +113,18 @@ export default function Home() {
       <Section background="muted">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center">
-            <div>
-              <Typography.H2 className="mb-6 text-center text-foreground">
-                오직 금융교육만을 제공합니다.
-              </Typography.H2>
-              <div className="space-y-4">
-                <Typography.P className="text-muted-foreground">
-                  금융교육에만 전념하는 금융경제교육 전문 유스핀랩은 수업도구 및
-                  교보재 지원, 교수모형 개발 등 실생활 중심의 흥미로운 교육으로
-                  금융의 더 나은 가치를 전달합니다.
-                </Typography.P>
-              </div>
+            <Typography.H2 className="mb-6 text-center text-foreground w-full">
+              오직 금융교육만을 제공합니다.
+            </Typography.H2>
+            <div className="space-y-4">
+              <Typography.P className="text-muted-foreground text-center whitespace-pre-wrap break-keep">
+                금융교육에만 전념하는 금융경제교육 전문 유스핀랩은
+                <br />
+                수업도구 및 교보재 지원, 교수모형 개발 등
+                <br />
+                실생활 중심의 흥미로운 교육으로 금융의 더 나은 가치를
+                전달합니다.
+              </Typography.P>
             </div>
           </div>
         </div>
@@ -183,20 +133,41 @@ export default function Home() {
       <Section background="gradient-primary">
         <div className="container mx-auto px-4">
           <Typography.H2 className="text-center mb-12 text-foreground">
-            함께하는 파트너
+            다양한 기업, 기관, 학교에서
+            <br />
+            함께하고 있습니다.
           </Typography.H2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-12 gap-y-16">
-            {LECTURE_LOCATION.map((partner) => (
-              <div key={partner} className="flex items-center justify-center">
-                <Typography.P className="text-muted-foreground text-center text-sm font-medium">
-                  {partner}
-                </Typography.P>
-              </div>
-            ))}
+          <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+            <div className="flex items-center justify-center md:justify-start animate-scroll">
+              {LECTURE_LOCATION.map((partner, index) => (
+                <div
+                  key={`first-${index}`}
+                  className="flex-shrink-0 inline-flex items-center justify-center min-w-[130px]"
+                >
+                  <Typography.P className="text-muted-foreground text-sm font-medium">
+                    {partner}
+                  </Typography.P>
+                </div>
+              ))}
+            </div>
+            <div
+              className="flex items-center justify-center md:justify-start animate-scroll"
+              aria-hidden="true"
+            >
+              {LECTURE_LOCATION.map((partner, index) => (
+                <div
+                  key={`second-${index}`}
+                  className="flex-shrink-0 inline-flex items-center justify-center min-w-[130px]"
+                >
+                  <Typography.P className="text-muted-foreground text-sm font-medium">
+                    {partner}
+                  </Typography.P>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </Section>
-
       <Section background="gradient-primary-reverse">
         <div className="container mx-auto px-4 text-center">
           <Typography.H2 className="mb-8 text-foreground">
