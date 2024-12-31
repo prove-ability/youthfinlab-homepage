@@ -21,7 +21,6 @@ const Header = () => {
             <span className="font-bold">유스핀랩</span>
           </Link>
         </div>
-
         {/* 데스크톱 네비게이션 */}
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
           {/* 블로그는 외부링크 */}
