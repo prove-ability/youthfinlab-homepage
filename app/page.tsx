@@ -137,18 +137,37 @@ export default function Home() {
             <br />
             함께하고 있습니다.
           </Typography.H2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-12 gap-y-16">
-            {LECTURE_LOCATION.map((partner) => (
-              <div key={partner} className="flex items-center justify-center">
-                <Typography.P className="text-muted-foreground text-center text-sm font-medium whitespace-pre-wrap break-keep">
-                  {partner}
-                </Typography.P>
-              </div>
-            ))}
+          <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+            <div className="flex items-center justify-center md:justify-start animate-scroll">
+              {LECTURE_LOCATION.map((partner, index) => (
+                <div
+                  key={`first-${index}`}
+                  className="flex-shrink-0 inline-flex items-center justify-center min-w-[130px]"
+                >
+                  <Typography.P className="text-muted-foreground text-sm font-medium">
+                    {partner}
+                  </Typography.P>
+                </div>
+              ))}
+            </div>
+            <div
+              className="flex items-center justify-center md:justify-start animate-scroll"
+              aria-hidden="true"
+            >
+              {LECTURE_LOCATION.map((partner, index) => (
+                <div
+                  key={`second-${index}`}
+                  className="flex-shrink-0 inline-flex items-center justify-center min-w-[130px]"
+                >
+                  <Typography.P className="text-muted-foreground text-sm font-medium">
+                    {partner}
+                  </Typography.P>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </Section>
-
       <Section background="gradient-primary-reverse">
         <div className="container mx-auto px-4 text-center">
           <Typography.H2 className="mb-8 text-foreground">
