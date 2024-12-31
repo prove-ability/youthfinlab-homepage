@@ -164,17 +164,18 @@ export default function Home() {
       <Section background="muted">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center">
-            <div>
-              <Typography.H2 className="mb-6 text-center text-foreground">
-                오직 금융교육만을 제공합니다.
-              </Typography.H2>
-              <div className="space-y-4">
-                <Typography.P className="text-muted-foreground">
-                  금융교육에만 전념하는 금융경제교육 전문 유스핀랩은 수업도구 및
-                  교보재 지원, 교수모형 개발 등 실생활 중심의 흥미로운 교육으로
-                  금융의 더 나은 가치를 전달합니다.
-                </Typography.P>
-              </div>
+            <Typography.H2 className="mb-6 text-center text-foreground w-full">
+              오직 금융교육만을 제공합니다.
+            </Typography.H2>
+            <div className="space-y-4">
+              <Typography.P className="text-muted-foreground text-center whitespace-pre-wrap break-keep">
+                금융교육에만 전념하는 금융경제교육 전문 유스핀랩은
+                <br />
+                수업도구 및 교보재 지원, 교수모형 개발 등
+                <br />
+                실생활 중심의 흥미로운 교육으로 금융의 더 나은 가치를
+                전달합니다.
+              </Typography.P>
             </div>
           </div>
         </div>
@@ -183,12 +184,14 @@ export default function Home() {
       <Section background="gradient-primary">
         <div className="container mx-auto px-4">
           <Typography.H2 className="text-center mb-12 text-foreground">
-            함께하는 파트너
+            다양한 기업, 기관, 학교에서
+            <br />
+            함께하고 있습니다.
           </Typography.H2>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-12 gap-y-16">
             {LECTURE_LOCATION.map((partner) => (
               <div key={partner} className="flex items-center justify-center">
-                <Typography.P className="text-muted-foreground text-center text-sm font-medium">
+                <Typography.P className="text-muted-foreground text-center text-sm font-medium whitespace-pre-wrap break-keep">
                   {partner}
                 </Typography.P>
               </div>

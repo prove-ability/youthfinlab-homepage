@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
+import { Button } from "../ui/button";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,7 @@ const Header = () => {
       <div className="container flex h-14 items-center justify-between mx-auto px-4">
         <div className="flex">
           <Link className="mr-6 flex items-center space-x-2" href="/">
-            <span className="font-bold">Youthfinal</span>
+            <span className="font-bold">유스핀랩</span>
           </Link>
         </div>
 
