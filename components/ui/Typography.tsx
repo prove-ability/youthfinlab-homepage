@@ -1,4 +1,5 @@
 import { FC, ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 interface Props {
   className?: string;
@@ -87,7 +88,24 @@ const Muted: FC<Props> = ({ className, children }) => {
   );
 };
 
+const Label: FC<Props> = ({ className, children }) => {
+  return (
+    <label
+      className={cn(
+        "text-sm font-medium leading-none",
+        "text-foreground/90",
+        "peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
+        "select-none",
+        "transition-colors",
+        className
+      )}
+    >
+      {children}
+    </label>
+  );
+};
+
 export default Object.assign(
   {},
-  { H1, H2, H3, H4, P, Lead, Large, Muted, Blockquote, InlineCode }
+  { H1, H2, H3, H4, P, Lead, Large, Muted, Blockquote, InlineCode, Label }
 );
