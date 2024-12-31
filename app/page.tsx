@@ -2,7 +2,7 @@
 
 import OptimizedImage from "@/components/ui/OptimizedImage";
 import Typography from "@/components/ui/Typography";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { ReactNode, FC } from "react";
 
