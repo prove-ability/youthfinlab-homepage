@@ -5,6 +5,7 @@ import Button from "@/components/ui/Button";
 import Section from "@/components/ui/Section";
 import { LECTURE_LOCATION } from "@/app/constants/partners";
 import Video from "@/components/ui/Video";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -27,7 +28,9 @@ export default function Home() {
           </Typography.H4>
         </div>
         <div className="flex justify-center mt-8">
-          <Button variant="default">자세히 보기</Button>
+          <Link href="https://blog.naver.com/youthfinlab" target="_blank">
+            <Button variant="default">자세히 보기</Button>
+          </Link>
         </div>
       </Section>
 
@@ -160,13 +163,11 @@ export default function Home() {
           <Typography.H2 className="mb-8 text-foreground">
             교육 문의하기
           </Typography.H2>
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-primary/90"
-            onClick={() => (window.location.href = "/contact")}
-          >
-            문의하기
-          </Button>
+          <Link href="/education-inquiry">
+            <Button size="lg" className="bg-primary hover:bg-primary/90">
+              문의하기
+            </Button>
+          </Link>
         </div>
       </Section>
     </main>
