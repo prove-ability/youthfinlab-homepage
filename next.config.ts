@@ -10,14 +10,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async rewrites() {
-    return [
-      {
-        source: "/naver*.html",
-        destination: "/naver.html",
-      },
-    ];
-  },
 };
 
 export default nextConfig;
