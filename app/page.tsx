@@ -1,10 +1,10 @@
 "use client";
 
-import OptimizedImage from "@/components/ui/OptimizedImage";
 import Typography from "@/components/ui/Typography";
 import Button from "@/components/ui/Button";
 import Section from "@/components/ui/Section";
 import { LECTURE_LOCATION } from "@/app/constants/partners";
+import Video from "@/components/ui/Video";
 
 export default function Home() {
   return (
@@ -48,12 +48,7 @@ export default function Home() {
             </Typography.P>
           </div>
           <div className="flex-1 w-full">
-            <OptimizedImage
-              src="https://placehold.co/800x500/F4F4F4/666666.png?text=Money+Management"
-              alt="돈 관리 이미지"
-              className="rounded-2xl w-full"
-              priority={true}
-            />
+            <Video src="/home/1.mp4" className="rounded-2xl w-full h-auto" />
           </div>
         </div>
       </Section>
@@ -75,11 +70,7 @@ export default function Home() {
             </Typography.P>
           </div>
           <div className="flex-1 w-full">
-            <OptimizedImage
-              src="https://placehold.co/800x500/F4F4F4/666666.png?text=Daily+Tips"
-              alt="일상 팁 이미지"
-              className="rounded-2xl w-full"
-            />
+            <Video src="/home/2.mp4" className="rounded-2xl w-full" />
           </div>
         </div>
       </Section>
@@ -101,11 +92,7 @@ export default function Home() {
             </Typography.P>
           </div>
           <div className="flex-1 w-full">
-            <OptimizedImage
-              src="https://placehold.co/800x500/F4F4F4/666666.png?text=Shopping+Tips"
-              alt="쇼핑 팁 이미지"
-              className="rounded-2xl w-full"
-            />
+            <Video src="/home/3.mp4" className="rounded-2xl w-full" />
           </div>
         </div>
       </Section>
