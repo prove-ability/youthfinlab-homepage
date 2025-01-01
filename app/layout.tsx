@@ -8,6 +8,31 @@ export const metadata: Metadata = {
   title: "유스핀랩",
   description:
     "금융 지식이 만드는 큰 변화, 금융교육 전문기업 유스핀랩과 함께하세요",
+  metadataBase: new URL("https://www.youthfinlab.com"),
+  openGraph: {
+    title: "유스핀랩 - 금융교육 전문기업",
+    description:
+      "금융 지식이 만드는 큰 변화, 금융교육 전문기업 유스핀랩과 함께하세요",
+    url: "https://www.youthfinlab.com",
+    siteName: "유스핀랩",
+    locale: "ko_KR",
+    type: "website",
+    // images: [
+    //   {
+    //     url: "/og-image.jpg", // 1200x630px 크기의 OG 이미지 추가 필요
+    //     width: 1200,
+    //     height: 630,
+    //     alt: "유스핀랩 - 금융교육 전문기업",
+    //   },
+    // ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "유스핀랩 - 금융교육 전문기업",
+    description:
+      "금융 지식이 만드는 큰 변화, 금융교육 전문기업 유스핀랩과 함께하세요",
+    // images: ["/og-image.jpg"],
+  },
   icons: {
     icon: [
       {
