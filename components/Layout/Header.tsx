@@ -28,19 +28,21 @@ const Header = () => {
             블로그
           </Link>
           <Link href="/customer-support">고객지원</Link>
-          <Button asChild>
-            <Link href="/education-inquiry">교육문의</Link>
-          </Button>
-          <button
+          <Link href="/education-inquiry">
+            <Button>교육문의</Button>
+          </Link>
+          <Button
+            variant="ghost"
+            size="icon"
             onClick={toggleTheme}
-            className="p-2 rounded-md hover:bg-accent hover:text-accent-foreground relative"
-            aria-label="Toggle theme"
+            className="relative"
+            aria-label="테마 변경"
           >
             <div className="relative w-4 h-4">
               <Sun className="absolute inset-0 h-4 w-4 transition-transform scale-100 rotate-0 dark:scale-0 dark:-rotate-90" />
               <Moon className="absolute inset-0 h-4 w-4 transition-transform scale-0 rotate-90 dark:scale-100 dark:rotate-0" />
             </div>
-          </button>
+          </Button>
         </nav>
 
         {/* 모바일 메뉴 버튼 */}
