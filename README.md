@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 유스핀랩 홈페이지
 
-## Getting Started
+금융교육 전문기업 유스핀랩의 공식 웹사이트입니다.
 
-First, run the development server:
+## 기술 스택
+
+### 프레임워크 & 라이브러리
+
+- Next.js 15.1.3
+- React 19.0.0
+- TypeScript
+- TailwindCSS
+- shadcn/ui
+
+### 상태 관리 & 폼
+
+- React Hook Form
+- Zod (폼 유효성 검증)
+
+### 외부 서비스 연동
+
+- Notion API (문의 데이터 저장)
+- Slack Webhook (문의 알림)
+
+## 주요 기능
+
+### 1. 다크모드 지원
+
+- next-themes를 활용한 다크모드 구현
+- 시스템 설정 연동 지원
+
+### 2. 반응형 디자인
+
+- 모바일, 태블릿, 데스크톱 대응
+- Tailwind CSS를 활용한 유연한 레이아웃
+
+### 3. 교육 문의 시스템
+
+- React Hook Form과 Zod를 활용한 폼 유효성 검증
+- Notion DB 연동을 통한 문의 데이터 관리
+- Slack 웹훅을 통한 실시간 문의 알림
+
+## 개발 환경 설정
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# 패키지 설치
+bun install
+
+# 개발 서버 실행
+bun run dev
+
+# 린트 검사
+bun run lint
+
+# 코드 포맷팅
+bun run format
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 환경 변수 설정
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`.env` 파일을 생성하고 설정해주세요
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+NOTION_API_KEY=your_notion_api_key
+NOTION_DATABASE_ID=your_notion_database_id
+SLACK_WEBHOOK_URL=your_slack_webhook_url
+```
 
-## Learn More
+## 커밋 컨벤션
 
-To learn more about Next.js, take a look at the following resources:
+커밋 메시지는 다음 형식을 따릅니다:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- build: 빌드 시스템 변경사항
+- chore: 빌드 프로세스 또는 보조 도구 변경
+- ci: CI 구성 파일 변경
+- docs: 문서 수정
+- feat: 새로운 기능 추가
+- fix: 버그 수정
+- perf: 성능 개선
+- refactor: 리팩토링
+- revert: 이전 커밋으로 되돌림
+- style: 코드 스타일 변경
+- test: 테스트 추가 또는 수정
