@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-
-# Sitemap
-Sitemap: https://www.youthfinlab.com/sitemap.xml 
+Sitemap: https://www.youthfinlab.com/sitemap.xml
