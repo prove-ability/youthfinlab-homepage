@@ -39,13 +39,13 @@ const Footer: FC = () => {
             >
               교육문의
             </Link>
-            <Link
-              // FIXME: notion 링크 적용 예정
+            {/* TODO: 링크 생성 후 적용 예정 */}
+            {/* <Link
               href="/recruit"
               className="text-gray-300 hover:text-white transition-colors"
             >
               강사채용
-            </Link>
+            </Link> */}
           </div>
         </div>
 
