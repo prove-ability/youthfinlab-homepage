@@ -120,7 +120,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section background="gradient-primary">
+      <Section background="gradient-primary" className="py-24">
         <div className="container mx-auto px-4">
           <Typography.H2 className="text-center mb-12 text-foreground">
             다양한 기업, 기관, 학교에서
@@ -160,12 +160,9 @@ export default function Home() {
       </Section>
       <Section background="gradient-primary-reverse">
         <div className="container mx-auto px-4 text-center">
-          <Typography.H2 className="mb-8 text-foreground">
-            교육 문의하기
-          </Typography.H2>
           <Link href="/education-inquiry">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              문의하기
+            <Button size="xl">
+              <Typography.H4>교육 문의하기</Typography.H4>
             </Button>
           </Link>
         </div>
