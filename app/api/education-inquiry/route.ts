@@ -7,7 +7,7 @@ export async function POST(request: Request) {
 
     const notionResponse = await addToNotionDatabase(data);
 
-    if (!notionResponse) {
+    if (!notionResponse || !notionResponse.id) {
       throw new Error("Failed to add data to Notion");
     }
 
