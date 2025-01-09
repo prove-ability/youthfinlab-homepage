@@ -1,5 +1,6 @@
 import { parseStringPromise } from "xml2js";
 import { NextResponse } from "next/server";
+import { generateSlug } from "@/app/blog/helpers";
 
 export async function GET() {
   try {
@@ -14,6 +15,7 @@ export async function GET() {
       link: item.link,
       description: item.description,
       pubDate: new Date(item.pubDate),
+      slug: generateSlug(item.title),
     }));
 
     return NextResponse.json(items);
