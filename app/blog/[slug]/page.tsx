@@ -1,49 +1,33 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 import Section from "@/components/ui/Section";
 import Typography from "@/components/ui/Typography";
 import Button from "@/components/ui/Button";
-import { use } from "react";
 import { BlogPost } from "../types";
 
-export default function BlogPostPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const resolvedParams = use(params);
-  const router = useRouter();
-  const [post, setPost] = useState<BlogPost | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+async function getBlogPosts() {
+  const res = await fetch("https://www.youthfinlab.com/api/blog", {
+    next: { revalidate: 3600 }, // 1시간마다 재검증
+  });
 
-  useEffect(() => {
-    fetch("/api/blog")
-      .then((res) => res.json())
-      .then((posts) => {
-        const decodedSlug = decodeURIComponent(resolvedParams.slug);
-        const foundPost = posts.find((p: BlogPost) => p.slug === decodedSlug);
-        console.log("foundPost", foundPost);
-        if (foundPost) {
-          setPost(foundPost);
-        } else {
-          router.push("/404");
-        }
-      })
-      .catch((err) => console.error(err))
-      .finally(() => setIsLoading(false));
-  }, [resolvedParams.slug, router]);
-
-  if (isLoading) {
-    return (
-      <Section className="min-h-[50vh] flex items-center justify-center">
-        <Typography.P>로딩중...</Typography.P>
-      </Section>
-    );
+  if (!res.ok) {
+    throw new Error("블로그 포스트를 가져오는데 실패했습니다");
   }
 
-  if (!post) return null;
+  return res.json();
+}
+
+export default async function BlogPostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const posts = await getBlogPosts();
+  const decodedSlug = decodeURIComponent(params.slug);
+  const post = posts.find((p: BlogPost) => p.slug === decodedSlug);
+
+  if (!post) {
+    redirect("/404");
+  }
 
   return (
     <main>
