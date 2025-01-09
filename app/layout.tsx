@@ -73,6 +73,12 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/site.webmanifest",
+  verification: {
+    google: "YDyhHr3hzO0Rs8E_09MgiQdjOPV3dTXZWsr3ZCC1vyY",
+    other: {
+      "naver-site-verification": "3fb974f582181fc4f8ea7e7afd66cb97bdaa3432",
+    },
+  },
 };
 
 export default function RootLayout({
@@ -82,12 +88,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" suppressHydrationWarning>
-      <head>
-        <meta
-          name="naver-site-verification"
-          content="3fb974f582181fc4f8ea7e7afd66cb97bdaa3432"
-        />
-      </head>
+      <head></head>
       <body>
         <RootProvider>
           <Header />
