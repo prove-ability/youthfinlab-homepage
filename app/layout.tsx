@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
-import Providers from "@/components/Providers";
+import RootProvider from "@/components/Providers/RootProvider";
 
 export const metadata: Metadata = {
   title: "유스핀랩",
@@ -89,11 +89,11 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Providers>
+        <RootProvider>
           <Header />
           {children}
           <Footer />
-        </Providers>
+        </RootProvider>
       </body>
     </html>
   );
