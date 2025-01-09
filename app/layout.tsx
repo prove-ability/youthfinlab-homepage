@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Providers from "./providers";
+import Header from "@/components/Layout/Header";
+import Footer from "@/components/Layout/Footer";
+import Providers from "@/components/Providers";
 
 export const metadata: Metadata = {
   title: "유스핀랩",
@@ -75,13 +77,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="ko" suppressHydrationWarning>
+      <head>
+        <meta
+          name="naver-site-verification"
+          content="3fb974f582181fc4f8ea7e7afd66cb97bdaa3432"
+        />
+      </head>
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Header />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
