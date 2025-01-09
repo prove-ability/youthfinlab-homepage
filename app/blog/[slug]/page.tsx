@@ -3,6 +3,7 @@ import Section from "@/components/ui/Section";
 import Typography from "@/components/ui/Typography";
 import Button from "@/components/ui/Button";
 import { BlogPost } from "../types";
+import { Metadata } from "next";
 
 async function getBlogPosts() {
   const res = await fetch("https://www.youthfinlab.com/api/blog", {
@@ -64,4 +65,51 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
     </Section>
   );
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const posts = await getBlogPosts();
+  const slug = (await params).slug;
+  const decodedSlug = decodeURIComponent(slug);
+  const post = posts.find((p: BlogPost) => p.slug === decodedSlug);
+
+  if (!post) {
+    return {
+      title: "페이지를 찾을 수 없습니다 - 유스핀랩",
+      description: "요청하신 페이지가 존재하지 않습니다.",
+    };
+  }
+
+  const keywords = [
+    "금융교육",
+    "경제교육",
+    "금융교육강사",
+    "청소년금융교육",
+    "금융캠프",
+    "경제교육강사",
+    "금융연수",
+    "금융특강",
+    "취약계층금융교육",
+    "자립지원청년금융교육",
+    "고립은둔금융교육",
+  ].join(", ");
+
+  return {
+    title: `${post.title} - 유스핀랩`,
+    description: `${post.description} | 금융교육 전문기업 유스핀랩의 금융교육 이야기입니다. 청소년금융교육, 금융캠프, 금융특강 등 다양한 금융교육 프로그램을 제공합니다.`,
+    keywords,
+    openGraph: {
+      title: `${post.title} - 유스핀랩`,
+      description: `${post.description} | 금융교육 전문기업 유스핀랩의 금융교육 이야기입니다. 청소년금융교육, 금융캠프, 금융특강 등 다양한 금융교육 프로그램을 제공합니다.`,
+      url: `https://www.youthfinlab.com/blog/${post.slug}`,
+      siteName: "유스핀랩",
+      locale: "ko_KR",
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+    },
+  };
 }

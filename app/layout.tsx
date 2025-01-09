@@ -5,14 +5,14 @@ import Footer from "@/components/Layout/Footer";
 import RootProvider from "@/components/Providers/RootProvider";
 
 export const metadata: Metadata = {
-  title: "유스핀랩",
+  title: "유스핀랩 | 청소년·청년 맞춤형 금융교육 전문기업",
   description:
-    "금융 지식이 만드는 큰 변화, 금융교육 전문기업 유스핀랩과 함께하세요",
+    "금융교육 전문기업 유스핀랩은 청소년, 청년, 일반인을 위한 맞춤형 금융교육 프로그램을 제공합니다. 체계적인 커리큘럼과 전문 강사진이 함께합니다.",
   metadataBase: new URL("https://www.youthfinlab.com"),
   openGraph: {
-    title: "유스핀랩 - 금융교육 전문기업",
+    title: "유스핀랩 | 청소년·청년 맞춤형 금융교육 전문기업",
     description:
-      "금융 지식이 만드는 큰 변화, 금융교육 전문기업 유스핀랩과 함께하세요",
+      "금융교육 전문기업 유스핀랩은 청소년, 청년, 일반인을 위한 맞춤형 금융교육 프로그램을 제공합니다. 체계적인 커리큘럼과 전문 강사진이 함께합니다.",
     url: "https://www.youthfinlab.com",
     siteName: "유스핀랩",
     locale: "ko_KR",
@@ -73,6 +73,12 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/site.webmanifest",
+  verification: {
+    google: "YDyhHr3hzO0Rs8E_09MgiQdjOPV3dTXZWsr3ZCC1vyY",
+    other: {
+      "naver-site-verification": "3fb974f582181fc4f8ea7e7afd66cb97bdaa3432",
+    },
+  },
 };
 
 export default function RootLayout({
@@ -82,12 +88,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" suppressHydrationWarning>
-      <head>
-        <meta
-          name="naver-site-verification"
-          content="3fb974f582181fc4f8ea7e7afd66cb97bdaa3432"
-        />
-      </head>
+      <head></head>
       <body>
         <RootProvider>
           <Header />
