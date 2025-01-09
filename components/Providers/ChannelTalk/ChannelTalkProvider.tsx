@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import ChannelService from "./Definition";
+import ChannelService from "./channel-talk.service";
 
 export function ChannelTalkProvider({
   children,
