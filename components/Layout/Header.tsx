@@ -24,9 +24,7 @@ const Header = () => {
         {/* 데스크톱 네비게이션 */}
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
           {/* 블로그는 외부링크 */}
-          <Link href="https://blog.naver.com/youthfinlab" target="_blank">
-            블로그
-          </Link>
+          <Link href="/blog">블로그</Link>
           <Link href="/customer-support">고객지원</Link>
           <Link href="/education-inquiry">
             <Button>교육문의</Button>

@@ -21,8 +21,7 @@ const Footer: FC = () => {
           {/* 메뉴 링크 */}
           <div className="flex flex-col md:flex-row gap-3">
             <Link
-              href="https://blog.naver.com/youthfinlab"
-              target="_blank"
+              href="/blog"
               className="text-gray-300 hover:text-white transition-colors"
             >
               블로그
