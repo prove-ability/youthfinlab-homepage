@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
-import { ThemeProvider } from "@/components/theme-provider";
+import RootProvider from "@/components/Providers/RootProvider";
 
 export const metadata: Metadata = {
   title: "유스핀랩",
@@ -81,7 +81,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
       <head>
         <meta
           name="naver-site-verification"
@@ -89,16 +89,11 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <RootProvider>
           <Header />
           {children}
           <Footer />
-        </ThemeProvider>
+        </RootProvider>
       </body>
     </html>
   );
