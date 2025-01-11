@@ -5,12 +5,12 @@ import Footer from "@/components/Layout/Footer";
 import RootProvider from "@/components/Providers/RootProvider";
 
 export const metadata: Metadata = {
-  title: "유스핀랩 | 청소년·청년 맞춤형 금융교육 전문기업",
+  title: "유스핀랩 | 금융교육 전문기업",
   description:
     "금융교육 전문기업 유스핀랩은 청소년, 청년, 일반인을 위한 맞춤형 금융교육 프로그램을 제공합니다. 체계적인 커리큘럼과 전문 강사진이 함께합니다.",
   metadataBase: new URL("https://www.youthfinlab.com"),
   openGraph: {
-    title: "유스핀랩 | 청소년·청년 맞춤형 금융교육 전문기업",
+    title: "유스핀랩 | 금융교육 전문기업",
     description:
       "금융교육 전문기업 유스핀랩은 청소년, 청년, 일반인을 위한 맞춤형 금융교육 프로그램을 제공합니다. 체계적인 커리큘럼과 전문 강사진이 함께합니다.",
     url: "https://www.youthfinlab.com",
