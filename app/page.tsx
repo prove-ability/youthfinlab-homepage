@@ -6,6 +6,7 @@ import Section from "@/components/ui/Section";
 import { LECTURE_LOCATION } from "@/app/constants/partners";
 import Video from "@/components/ui/Video";
 import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 export default function Home() {
   return (
@@ -22,7 +23,7 @@ export default function Home() {
         </Typography.H1>
         <div className="space-y-4">
           <Typography.H4 className="text-foreground/80">
-            금융 지식이 만드는 큰 변화
+            금융지식이 만드는 큰 변화
             <br />
             금융교육 전문기업 유스핀랩과 함께하세요
           </Typography.H4>
@@ -47,7 +48,7 @@ export default function Home() {
               <br />
               누구나 반드시 알아야 할 삶의 필수 지식입니다.
               <br />
-              유스핀랩에서 건강한 금융생활을 위해 시작해 보세요
+              유스핀랩에서 건강한 금융생활을 위해 시작해 보세요!
             </Typography.P>
           </div>
           <div className="flex-1 w-full">
@@ -65,9 +66,9 @@ export default function Home() {
               프로그램 설계
             </Typography.H2>
             <Typography.P className="text-accent-foreground/80">
-              모두를 만족시키는 교육은
+              만족도 높은 교육을 위해
               <br />
-              시작부터 끝까지 소통하며, 철저한 분석에서
+              꼼꼼한 소통과 철저한 분석으로
               <br />
               최적의 프로그램을 설계합니다.
             </Typography.P>
@@ -82,9 +83,9 @@ export default function Home() {
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1 space-y-4">
             <Typography.H2 className="text-2xl font-bold border-none text-foreground">
-              동등하게 누릴 수 있는
+              동등하게 누리는
               <br />
-              금융 교육
+              금융교육
             </Typography.H2>
             <Typography.P className="text-muted-foreground">
               청소년, 지역아동센터, 자립지원청년
@@ -158,11 +159,20 @@ export default function Home() {
           </div>
         </div>
       </Section>
-      <Section background="gradient-primary-reverse">
-        <div className="container mx-auto px-4 text-center">
+      <Section background="muted">
+        <div className="container mx-auto px-4 text-center space-y-6">
+          <div className="space-y-2">
+            <Typography.H2 className="text-foreground border-none">
+              금융교육의 시작
+              <br />
+              오늘부터 경험해보세요
+            </Typography.H2>
+          </div>
           <Link href="/education-inquiry">
-            <Button size="xl">
-              <Typography.H4>교육 문의하기</Typography.H4>
+            <Button size="xl" className="mt-5">
+              <Typography.H4 className="flex items-center gap-2">
+                교육 문의하기 <ChevronRight className="w-5 h-5" />
+              </Typography.H4>
             </Button>
           </Link>
         </div>
