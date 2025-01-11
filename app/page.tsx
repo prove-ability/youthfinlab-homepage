@@ -6,6 +6,7 @@ import Section from "@/components/ui/Section";
 import { LECTURE_LOCATION } from "@/app/constants/partners";
 import Video from "@/components/ui/Video";
 import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 export default function Home() {
   return (
@@ -158,11 +159,20 @@ export default function Home() {
           </div>
         </div>
       </Section>
-      <Section background="gradient-primary-reverse">
-        <div className="container mx-auto px-4 text-center">
+      <Section background="muted">
+        <div className="container mx-auto px-4 text-center space-y-6">
+          <div className="space-y-2">
+            <Typography.H2 className="text-foreground border-none">
+              금융교육의 시작
+              <br />
+              오늘부터 경험해보세요
+            </Typography.H2>
+          </div>
           <Link href="/education-inquiry">
-            <Button size="xl">
-              <Typography.H4>교육 문의하기</Typography.H4>
+            <Button size="xl" className="mt-5">
+              <Typography.H4 className="flex items-center gap-2">
+                교육 문의하기 <ChevronRight className="w-5 h-5" />
+              </Typography.H4>
             </Button>
           </Link>
         </div>
