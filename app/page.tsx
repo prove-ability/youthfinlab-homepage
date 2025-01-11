@@ -82,9 +82,9 @@ export default function Home() {
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1 space-y-4">
             <Typography.H2 className="text-2xl font-bold border-none text-foreground">
-              동등하게 누릴 수 있는
+              동등하게 누리는
               <br />
-              금융 교육
+              금융교육
             </Typography.H2>
             <Typography.P className="text-muted-foreground">
               청소년, 지역아동센터, 자립지원청년
