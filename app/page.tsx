@@ -28,7 +28,7 @@ export default function Home() {
           </Typography.H4>
         </div>
         <div className="flex justify-center mt-8">
-          <Link href="https://blog.naver.com/youthfinlab" target="_blank">
+          <Link href="/blog">
             <Button variant="default">자세히 보기</Button>
           </Link>
         </div>
