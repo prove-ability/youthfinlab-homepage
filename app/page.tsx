@@ -47,7 +47,7 @@ export default function Home() {
               <br />
               누구나 반드시 알아야 할 삶의 필수 지식입니다.
               <br />
-              유스핀랩에서 건강한 금융생활을 위해 시작해 보세요
+              유스핀랩에서 건강한 금융생활을 위해 시작해 보세요!
             </Typography.P>
           </div>
           <div className="flex-1 w-full">
