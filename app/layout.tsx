@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "유스핀랩 - 금융교육 전문기업",
     description:
-      "금융 지식이 만드는 큰 변화, 금융교육 전문기업 유스핀랩과 함께하세요",
+      "금융지식이 만드는 큰 변화, 금융교육 전문기업 유스핀랩과 함께하세요",
     // images: ["/og-image.jpg"],
   },
   icons: {

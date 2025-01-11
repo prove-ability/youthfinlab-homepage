@@ -22,7 +22,7 @@ export default function Home() {
         </Typography.H1>
         <div className="space-y-4">
           <Typography.H4 className="text-foreground/80">
-            금융 지식이 만드는 큰 변화
+            금융지식이 만드는 큰 변화
             <br />
             금융교육 전문기업 유스핀랩과 함께하세요
           </Typography.H4>
