@@ -65,9 +65,9 @@ export default function Home() {
               프로그램 설계
             </Typography.H2>
             <Typography.P className="text-accent-foreground/80">
-              모두를 만족시키는 교육은
+              만족도 높은 교육을 위해
               <br />
-              시작부터 끝까지 소통하며, 철저한 분석에서
+              꼼꼼한 소통과 철저한 분석으로
               <br />
               최적의 프로그램을 설계합니다.
             </Typography.P>
